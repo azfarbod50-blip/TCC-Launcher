@@ -454,6 +454,43 @@ ipcRenderer.on('distributionIndexDone', async (event, res) => {
     }
 })
 
+// Race-condition guard: if the distributionIndexDone IPC event was sent
+// from the preloader before this script registered its listener, the
+// event is lost and the main UI never shows. Check on DOMContentLoaded
+// and also when readyState is already 'complete' at load time.
+const distroIndexDoneGuard = async () => {
+    if (typeof window !== 'undefined' && window.__distroIndexResult !== undefined) {
+        // The preloader stored the result before our listener was registered.
+        const res = window.__distroIndexResult
+        window.__distroIndexResult = undefined // Consume it.
+        if(res) {
+            const data = await DistroAPI.getDistribution()
+            syncModConfigurations(data)
+            ensureJavaSettings(data)
+            await showMainUI(data)
+        } else {
+            fatalStartupError = true
+            showFatalStartupError()
+        }
+    } else if (rscShouldLoad) {
+        rscShouldLoad = false
+        if (!fatalStartupError && typeof DistroAPI !== 'undefined' && DistroAPI) {
+            try {
+                const data = await DistroAPI.getDistribution()
+                await showMainUI(data)
+            } catch(e) {
+                console.error('Distribution load in guard failed:', e)
+            }
+        } else if (fatalStartupError) {
+            showFatalStartupError()
+        }
+    }
+}
+document.addEventListener('DOMContentLoaded', distroIndexDoneGuard)
+if (document.readyState === 'complete') {
+    distroIndexDoneGuard()
+}
+
 // Util for development
 async function devModeToggle() {
     DistroAPI.toggleDevMode(true)

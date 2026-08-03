@@ -39,6 +39,10 @@ function onDistroLoad(data){
             ConfigManager.save()
         }
     }
+    // Store the result globally so uibinder.js can pick it up even if
+    // the IPC event was sent before its listener was registered.
+    window.__distroIndexResult = data != null
+    window.__distroIndexData = data
     ipcRenderer.send('distributionIndexDone', data != null)
 }
 
