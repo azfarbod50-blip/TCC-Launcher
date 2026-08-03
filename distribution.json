@@ -1,0 +1,630 @@
+{
+    "version": "1.0.0",
+    "discord": {
+        "clientId": "YOUR_DISCORD_APP_ID_HERE",
+        "smallImageText": "TCC Launcher",
+        "smallImageKey": "seal-circle"
+    },
+    "java": {
+        "oracle": "https://www.oracle.com/java/technologies/downloads/"
+    },
+    "rss": null,
+    "servers": [
+        {
+            "id": "tcc-client-1.21.11",
+            "name": "TCC Client 1.21.11",
+            "description": "TCC Client — Lunar-style enhanced client (performance + utilities)",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.21.11",
+            "mainServer": false,
+            "autoconnect": false,
+            "javaOptions": {
+                "supported": ">=21",
+                "suggestedMajor": 21,
+                "ram": {
+                    "recommended": 4096,
+                    "minimum": 2048
+                }
+            },
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": {
+                        "size": 1342852,
+                        "MD5": "",
+                        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar"
+                    },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.141.6+1.21.11",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.141.6+1.21.11/fabric-api-0.141.6+1.21.11.jar"
+                    }
+                },
+                {
+                    "id": "net.caffeinemc:sodium:0.6.7+mc1.21.11",
+                    "name": "Sodium",
+                    "type": "FabricMod",
+                    "required": { "value": false, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.caffeinemc.net/releases/net/caffeinemc/sodium/0.6.7%2Bmc1.21.11/sodium-0.6.7+mc1.21.11.jar"
+                    }
+                },
+                {
+                    "id": "me.jellysquid.mods:lithium:0.15.0+mc1.21.11",
+                    "name": "Lithium",
+                    "type": "FabricMod",
+                    "required": { "value": false, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.caffeinated.cc/releases/me/jellysquid/mods/lithium/0.15.0%2Bmc1.21.11/lithium-0.15.0+mc1.21.11.jar"
+                    }
+                },
+                {
+                    "id": "com.github.TheCSDev:keystrokes:2.0.3",
+                    "name": "Keystrokes",
+                    "type": "FabricMod",
+                    "required": { "value": false, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.fabricmc.net/com/github/TheCSDev/keystrokes/2.0.3/keystrokes-2.0.3.jar"
+                    }
+                },
+                {
+                    "id": "fi.dy.masa:mini-hud:0.31.8+1.21.11",
+                    "name": "MiniHUD",
+                    "type": "FabricMod",
+                    "required": { "value": false, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.fabricmc.net/fi/dy/masa/mini-hud/0.31.8%2B1.21.11/mini-hud-0.31.8+1.21.11.jar"
+                    }
+                },
+                {
+                    "id": "com.github.xaero:xaeros-minimap:25.4.0",
+                    "name": "Xaero's Minimap",
+                    "type": "FabricMod",
+                    "required": { "value": false, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.xaero96.net/maven/xaero/minimap/25.4.0/xaeros-minimap-25.4.0.jar"
+                    }
+                },
+                {
+                    "id": "com.github.xaero:xaeros-world-map:1.38.8",
+                    "name": "Xaero's World Map",
+                    "type": "FabricMod",
+                    "required": { "value": false, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.xaero96.net/maven/xaero/world-map/1.38.8/xaeros-world-map-1.38.8.jar"
+                    }
+                },
+                {
+                    "id": "me.jellysquid.mods:phosphor:0.8.1+mc1.21.11",
+                    "name": "Phosphor",
+                    "type": "FabricMod",
+                    "required": { "value": false, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.fabricmc.net/me/jellysquid/mods/phosphor/0.8.1%2Bmc1.21.11/phosphor-0.8.1+mc1.21.11.jar"
+                    }
+                },
+                {
+                    "id": "net.caffeinemc:ferrite-core:7.1.2",
+                    "name": "FerriteCore",
+                    "type": "FabricMod",
+                    "required": { "value": false, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.caffeinemc.net/releases/net/caffeinemc/ferrite-core/7.1.2/ferrite-core-7.1.2.jar"
+                    }
+                },
+                {
+                    "id": "com.github.tr7zw:entityculling:1.7.1",
+                    "name": "EntityCulling",
+                    "type": "FabricMod",
+                    "required": { "value": false, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.fabricmc.net/com/github/tr7zw/entityculling/1.7.1/entityculling-1.7.1.jar"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.21.11",
+            "name": "Fabric 1.21.11",
+            "description": "Fabric — lightweight, fast, modern (Latest)",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.21.11",
+            "mainServer": true,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": {
+                        "size": 1342852,
+                        "MD5": "",
+                        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar"
+                    },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.141.6+1.21.11",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.141.6+1.21.11/fabric-api-0.141.6+1.21.11.jar"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.21.1",
+            "name": "Fabric 1.21.1",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.21.1",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": {
+                        "size": 1342852,
+                        "MD5": "",
+                        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar"
+                    },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.116.15+1.21.1",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": {
+                        "size": 0,
+                        "MD5": "",
+                        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.116.15+1.21.1/fabric-api-0.116.15+1.21.1.jar"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.21",
+            "name": "Fabric 1.21",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.21",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.100.8+1.21",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.100.8+1.21/fabric-api-0.100.8+1.21.jar" }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.20.6",
+            "name": "Fabric 1.20.6",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.20.6",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.97.8+1.20.6",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.97.8+1.20.6/fabric-api-0.97.8+1.20.6.jar" }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.20.4",
+            "name": "Fabric 1.20.4",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.20.4",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.97.0+1.20.4",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.97.0+1.20.4/fabric-api-0.97.0+1.20.4.jar" }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.20.2",
+            "name": "Fabric 1.20.2",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.20.2",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.91.6+1.20.2",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.91.6+1.20.2/fabric-api-0.91.6+1.20.2.jar" }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.20.1",
+            "name": "Fabric 1.20.1",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.20.1",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.92.11+1.20.1",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.92.11+1.20.1/fabric-api-0.92.11+1.20.1.jar" }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.19.4",
+            "name": "Fabric 1.19.4",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.19.4",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.76.0+1.19.4",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.76.0+1.19.4/fabric-api-0.76.0+1.19.4.jar" }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.19.2",
+            "name": "Fabric 1.19.2",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.19.2",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.76.0+1.19.2",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.76.0+1.19.2/fabric-api-0.76.0+1.19.2.jar" }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.18.2",
+            "name": "Fabric 1.18.2",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.18.2",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.76.0+1.18.2",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.76.0+1.18.2/fabric-api-0.76.0+1.18.2.jar" }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.17.1",
+            "name": "Fabric 1.17.1",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.17.1",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.76.0+1.17.1",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.76.0+1.17.1/fabric-api-0.76.0+1.17.1.jar" }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.16.5",
+            "name": "Fabric 1.16.5",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.16.5",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.76.0+1.16.5",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.76.0+1.16.5/fabric-api-0.76.0+1.16.5.jar" }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.15.2",
+            "name": "Fabric 1.15.2",
+            "description": "Fabric — lightweight, fast, modern",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.15.2",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.76.0+1.15.2",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.76.0+1.15.2/fabric-api-0.76.0+1.15.2.jar" }
+                }
+            ]
+        },
+        {
+            "id": "fabric-1.14.4",
+            "name": "Fabric 1.14.4",
+            "description": "Fabric — lightweight, fast, modern (Oldest)",
+            "icon": "https://raw.githubusercontent.com/FabricMC/fabric/master/fabric-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.14.4",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.3",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 1342852, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.3/fabric-loader-0.19.3.jar" },
+                    "subModules": []
+                },
+                {
+                    "id": "net.fabricmc:fabric-api:0.76.0+1.14.4",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "required": { "value": true, "def": true },
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.76.0+1.14.4/fabric-api-0.76.0+1.14.4.jar" }
+                }
+            ]
+        },
+        {
+            "id": "forge-1.20.1",
+            "name": "Forge 1.20.1",
+            "description": "Forge — thousands of mods available",
+            "icon": "https://raw.githubusercontent.com/MinecraftForge/MinecraftForge/master/docs/groovy/ForgeLogo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.20.1",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.minecraftforge:forge:1.20.1-47.4.0",
+                    "name": "Minecraft Forge",
+                    "type": "ForgeHosted",
+                    "artifact": { "size": 24062491, "MD5": "", "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.0/forge-1.20.1-47.4.0-universal.jar" },
+                    "subModules": []
+                }
+            ]
+        },
+        {
+            "id": "forge-1.21.1",
+            "name": "Forge 1.21.1",
+            "description": "Forge — latest Minecraft support",
+            "icon": "https://raw.githubusercontent.com/MinecraftForge/MinecraftForge/master/docs/groovy/ForgeLogo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.21.1",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.minecraftforge:forge:1.21.1-52.0.16",
+                    "name": "Minecraft Forge",
+                    "type": "ForgeHosted",
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.21.1-52.0.16/forge-1.21.1-52.0.16-universal.jar" },
+                    "subModules": []
+                }
+            ]
+        },
+        {
+            "id": "neoforge-1.21.1",
+            "name": "NeoForge 1.21.1",
+            "description": "NeoForge — next-gen Forge fork",
+            "icon": "https://raw.githubusercontent.com/neoforged/Logo/main/neoforged.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.21.1",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "net.neoforged:neoforge:21.1.77",
+                    "name": "NeoForge",
+                    "type": "ForgeHosted",
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.77/neoforge-21.1.77-universal.jar" },
+                    "subModules": []
+                }
+            ]
+        },
+        {
+            "id": "quilt-1.21.1",
+            "name": "Quilt 1.21.1",
+            "description": "Quilt — community Fabric fork",
+            "icon": "https://raw.githubusercontent.com/QuiltMC/quilt/master/branding/quilt-logo.png",
+            "version": "1.0.0",
+            "address": "localhost",
+            "minecraftVersion": "1.21.1",
+            "mainServer": false,
+            "autoconnect": false,
+            "modules": [
+                {
+                    "id": "org.quiltmc:quilt-loader:0.26.3",
+                    "name": "Quilt Loader",
+                    "type": "Fabric",
+                    "artifact": { "size": 0, "MD5": "", "url": "https://maven.quiltmc.org/repository/release/org/quiltmc/quilt-loader/0.26.3/quilt-loader-0.26.3.jar" },
+                    "subModules": []
+                }
+            ]
+        }
+    ]
+}

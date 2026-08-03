@@ -1,0 +1,90 @@
+<div id="overlayContainer" style="display: none;">
+    <div id="serverSelectContent" style="display: none;">
+        <span id="serverSelectHeader"><%- lang('overlay.serverSelectHeader') %></span>
+        <div id="serverSelectList">
+            <div id="serverSelectListScrollable">
+                <!-- Server listings populated here. -->
+            </div>
+        </div>
+        <div id="serverSelectActions">
+            <button id="serverSelectConfirm" class="overlayKeybindEnter" type="submit"><%- lang('overlay.serverSelectConfirm') %></button>
+            <div id="serverSelectCancelWrapper">
+                <button id="serverSelectCancel" class="overlayKeybindEsc"><%- lang('overlay.serverSelectCancel') %></button>
+            </div>
+        </div>
+    </div>
+    <div id="accountSelectContent" style="display: none;">
+        <span id="accountSelectHeader"><%- lang('overlay.accountSelectHeader') %></span>
+        <div id="accountSelectList">
+            <div id="accountSelectListScrollable">
+                <!-- Accounts populated here. -->
+            </div>
+        </div>
+        <div id="accountSelectActions">
+            <button id="accountSelectConfirm" class="overlayKeybindEnter" type="submit"><%- lang('overlay.accountSelectConfirm') %></button>
+            <div id="accountSelectCancelWrapper">
+                <button id="accountSelectCancel" class="overlayKeybindEsc"><%- lang('overlay.accountSelectCancel') %></button>
+            </div>
+        </div>
+    </div>
+    <div id="modLoaderSelectContent" style="display: none;">
+        <span id="modLoaderSelectHeader"><%- lang('overlay.modLoaderSelectHeader') %></span>
+        <div id="modLoaderSelectList">
+            <div id="modLoaderSelectListScrollable">
+                <!-- Mod loader listings populated here. -->
+            </div>
+        </div>
+        <div id="modLoaderSelectActions">
+            <button id="modLoaderSelectConfirm" class="overlayKeybindEnter" type="submit"><%- lang('overlay.modLoaderSelectConfirm') %></button>
+            <div id="modLoaderSelectCancelWrapper">
+                <button id="modLoaderSelectCancel" class="overlayKeybindEsc"><%- lang('overlay.modLoaderSelectCancel') %></button>
+            </div>
+        </div>
+    </div>
+    <div id="modBrowserContent" style="display: none;">
+        <span id="modBrowserHeader">Mod Browser</span>
+        <div id="modBrowserSearchBar">
+            <input id="modBrowserSearchInput" type="text" placeholder="Search mods on Modrinth..." autocomplete="off" />
+            <div id="modBrowserSuggestions" style="display: none;">
+                <div id="modBrowserSuggestionsList"></div>
+            </div>
+        </div>
+        <div id="modBrowserFilters">
+            <select id="modBrowserLoaderFilter">
+                <option value="">Any Loader</option>
+                <option value="fabric">Fabric</option>
+            </select>
+            <select id="modBrowserVersionFilter">
+                <option value="">Any Version</option>
+            </select>
+        </div>
+        <div id="modBrowserList">
+            <div id="modBrowserListScrollable">
+                <div id="modBrowserResults">
+                    <!-- Mod results populated here. -->
+                </div>
+                <div id="modBrowserLoading" style="display: none;">
+                    <span>Loading mods...</span>
+                </div>
+                <div id="modBrowserEmpty" style="display: none;">
+                    <span>No mods found.</span>
+                </div>
+            </div>
+        </div>
+        <div id="modBrowserActions">
+            <button id="modBrowserClose" class="overlayKeybindEsc">Close</button>
+        </div>
+    </div>
+    <div id="overlayContent">
+        <span id="overlayTitle">Lorem Ipsum:<br>Finis Illud</span>
+        <span id="overlayDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud..</span>
+        <div id="overlayActionContainer">
+            <button id="overlayAcknowledge" class="overlayKeybindEnter">Conare Iterum</button>
+            <div id="overlayDismissWrapper">
+                <button id="overlayDismiss" style="display: none;" class="overlayKeybindEsc">Dismiss</button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/scripts/overlay.js"></script>
+    <script src="./assets/js/scripts/modbrowser.js"></script>
+</div>

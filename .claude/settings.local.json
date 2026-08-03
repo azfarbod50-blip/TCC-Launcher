@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const https = require\\('https'\\); const timeout = setTimeout\\(\\(\\) => { console.log\\('TIMEOUT - remote unreachable'\\); process.exit\\(1\\); }, 15000\\); https.get\\('https://helios-files.geekcorner.eu.org/distribution.json', res => { clearTimeout\\(timeout\\); console.log\\('Status:', res.statusCode\\); res.resume\\(\\); }\\).on\\('error', err => { clearTimeout\\(timeout\\); console.log\\('Error:', err.message\\); }\\);\")",
+      "Bash(node -e ' *)",
+      "Bash(npx -y serve -l 3000)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(node -e \"const fs=require\\('fs'\\); const j=JSON.parse\\(fs.readFileSync\\('distribution.json','utf8'\\)\\); const tc=j.servers.find\\(s=>s.id==='tcc-client-1.21.11'\\); console.log\\('TCC Client modules:',tc.modules.map\\(m=>m.name\\).join\\(', '\\)\\); console.log\\('Java options:',JSON.stringify\\(tc.javaOptions\\)\\);\")",
+      "Bash(npm run *)",
+      "Bash(node --check app/assets/js/configmanager.js)",
+      "Bash(node --check app/assets/js/clientpack.js)",
+      "Bash(node --check app/assets/js/friendlist.js)",
+      "Bash(node --check app/assets/js/scripts/settings.js)",
+      "Bash(node --check app/assets/js/scripts/welcome.js)",
+      "Bash(node_modules/.bin/electron . --remote-debugging-port=9226)"
+    ]
+  }
+}

@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0b0c10;
+    --bg-secondary: #1f2833;
+    --bg-card: #1a1d24;
+    --accent: #4fc3f7;
+    --accent-hover: #81d4fa;
+    --text-primary: #e0e0e0;
+    --text-secondary: #8892a0;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* Nav */
+nav {
+    background: rgba(11, 12, 16, 0.92);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0 40px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-primary);
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: radial-gradient(ellipse at 50% 0%, rgba(79, 195, 247, 0.08) 0%, transparent 60%);
+}
+
+.hero h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin-bottom: 32px;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+/* Sections */
+.section {
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section p {
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    transition: border-color 0.25s, transform 0.25s;
+}
+
+.feature-card:hover {
+    border-color: rgba(79, 195, 247, 0.25);
+    transform: translateY(-2px);
+}
+
+.feature-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.feature-card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.feature-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+/* Mods Page */
+.mods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+}
+
+.mod-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.mod-card h3 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.mod-card .category {
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.mod-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+/* Status Page */
+.status-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.status-table th,
+.status-table td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.status-table th {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-dot.green { background: #4caf50; }
+.status-dot.red { background: #f44336; }
+.status-dot.yellow { background: #ff9800; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 32px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+}
