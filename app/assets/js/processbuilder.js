@@ -384,12 +384,18 @@ class ProcessBuilder {
         let args = this.vanillaManifest.arguments.jvm
 
         if(this.modManifest !== this.vanillaManifest && this.modManifest.arguments.jvm != null) {
-            for(const argStr of this.modManifest.arguments.jvm) {
-                args.push(argStr
-                    .replaceAll('${library_directory}', this.libPath)
-                    .replaceAll('${classpath_separator}', ProcessBuilder.getClasspathSeparator())
-                    .replaceAll('${version_name}', this.modManifest.id)
-                )
+            for(const argEntry of this.modManifest.arguments.jvm) {
+                // Fabric manifests may have array entries or rule objects — flatten them
+                const entries = Array.isArray(argEntry) ? argEntry : (typeof argEntry === 'object' && argEntry.value ? argEntry.value : [argEntry])
+                for(const argStr of entries) {
+                    if(typeof argStr === 'string') {
+                        args.push(argStr
+                            .replaceAll('${library_directory}', this.libPath)
+                            .replaceAll('${classpath_separator}', ProcessBuilder.getClasspathSeparator())
+                            .replaceAll('${version_name}', this.modManifest.id)
+                        )
+                    }
+                }
             }
         }
 
