@@ -385,25 +385,15 @@ class ProcessBuilder {
 
         if(this.modManifest !== this.vanillaManifest && this.modManifest.arguments.jvm != null) {
             for(const argEntry of this.modManifest.arguments.jvm) {
-                // Fabric manifests may have array entries or rule objects — flatten them
+                // Only push plain string entries — rule objects are already in the vanilla manifest
                 if(typeof argEntry === 'string') {
                     args.push(argEntry
                         .replaceAll('${library_directory}', this.libPath)
                         .replaceAll('${classpath_separator}', ProcessBuilder.getClasspathSeparator())
                         .replaceAll('${version_name}', this.modManifest.id)
                     )
-                } else if(typeof argEntry === 'object' && argEntry.value != null) {
-                    const vals = Array.isArray(argEntry.value) ? argEntry.value : [argEntry.value]
-                    for(const v of vals) {
-                        if(typeof v === 'string') {
-                            args.push(v
-                                .replaceAll('${library_directory}', this.libPath)
-                                .replaceAll('${classpath_separator}', ProcessBuilder.getClasspathSeparator())
-                                .replaceAll('${version_name}', this.modManifest.id)
-                            )
-                        }
-                    }
                 }
+                // Skip rule objects — the vanilla manifest already has them with proper rules
             }
         }
 
@@ -443,8 +433,11 @@ class ProcessBuilder {
         // Main Java Class
         args.push(this.modManifest.mainClass)
 
-        // Vanilla Arguments
+        // Vanilla + Mod Arguments
         args = args.concat(this.vanillaManifest.arguments.game)
+        if(this.modManifest !== this.vanillaManifest){
+            args = args.concat(this.modManifest.arguments.game)
+        }
 
         for(let i=0; i<args.length; i++){
             if(typeof args[i] === 'object' && args[i].rules != null){
@@ -548,11 +541,6 @@ class ProcessBuilder {
         // Autoconnect
         this._processAutoConnectArg(args)
         
-
-        // Forge Specific Arguments
-        if(this.modManifest !== this.vanillaManifest){
-            args = args.concat(this.modManifest.arguments.game)
-        }
 
         // Filter null values
         args = args.filter(arg => {
