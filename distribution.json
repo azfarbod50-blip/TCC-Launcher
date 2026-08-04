@@ -62,7 +62,7 @@
                     "artifact": {
                         "size": 0,
                         "MD5": "",
-                        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.141.6+1.21.11/fabric-api-0.141.6+1.21.11.jar"
+                        "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/6qAuTtLR/fabric-api-0.141.6%2B1.21.11.jar"
                     }
                 },
                 {
@@ -132,7 +132,7 @@
                     "artifact": {
                         "size": 0,
                         "MD5": "",
-                        "url": "https://maven.xaero96.net/maven/xaero/minimap/25.4.0/xaeros-minimap-25.4.0.jar"
+                        "url": "https://cdn.modrinth.com/data/1bokaNcj/versions/8MdqDp18/xaerominimap-fabric-1.21.11-26.4.2.jar"
                     }
                 },
                 {
@@ -146,7 +146,7 @@
                     "artifact": {
                         "size": 0,
                         "MD5": "",
-                        "url": "https://maven.xaero96.net/maven/xaero/world-map/1.38.8/xaeros-world-map-1.38.8.jar"
+                        "url": "https://cdn.modrinth.com/data/NcUtCpym/versions/uuPYtgMh/xaeroworldmap-fabric-1.21.11-1.44.2.jar"
                     }
                 },
                 {
@@ -160,7 +160,7 @@
                     "artifact": {
                         "size": 0,
                         "MD5": "",
-                        "url": "https://maven.caffeinemc.net/releases/net/caffeinemc/ferrite-core/7.1.2/ferrite-core-7.1.2.jar"
+                        "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/Ii0gP3D8/ferritecore-8.2.0-fabric.jar"
                     }
                 },
                 {
@@ -223,7 +223,7 @@
                     "artifact": {
                         "size": 0,
                         "MD5": "",
-                        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.141.6+1.21.11/fabric-api-0.141.6+1.21.11.jar"
+                        "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/6qAuTtLR/fabric-api-0.141.6%2B1.21.11.jar"
                     }
                 }
             ]
