@@ -386,14 +386,22 @@ class ProcessBuilder {
         if(this.modManifest !== this.vanillaManifest && this.modManifest.arguments.jvm != null) {
             for(const argEntry of this.modManifest.arguments.jvm) {
                 // Fabric manifests may have array entries or rule objects — flatten them
-                const entries = Array.isArray(argEntry) ? argEntry : (typeof argEntry === 'object' && argEntry.value ? argEntry.value : [argEntry])
-                for(const argStr of entries) {
-                    if(typeof argStr === 'string') {
-                        args.push(argStr
-                            .replaceAll('${library_directory}', this.libPath)
-                            .replaceAll('${classpath_separator}', ProcessBuilder.getClasspathSeparator())
-                            .replaceAll('${version_name}', this.modManifest.id)
-                        )
+                if(typeof argEntry === 'string') {
+                    args.push(argEntry
+                        .replaceAll('${library_directory}', this.libPath)
+                        .replaceAll('${classpath_separator}', ProcessBuilder.getClasspathSeparator())
+                        .replaceAll('${version_name}', this.modManifest.id)
+                    )
+                } else if(typeof argEntry === 'object' && argEntry.value != null) {
+                    const vals = Array.isArray(argEntry.value) ? argEntry.value : [argEntry.value]
+                    for(const v of vals) {
+                        if(typeof v === 'string') {
+                            args.push(v
+                                .replaceAll('${library_directory}', this.libPath)
+                                .replaceAll('${classpath_separator}', ProcessBuilder.getClasspathSeparator())
+                                .replaceAll('${version_name}', this.modManifest.id)
+                            )
+                        }
                     }
                 }
             }
