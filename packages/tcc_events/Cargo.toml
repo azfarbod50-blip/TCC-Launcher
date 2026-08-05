@@ -1,0 +1,22 @@
+[package]
+name = "tcc_events"
+description = "TCC Launcher event system"
+version = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+repository = { workspace = true }
+documentation = { workspace = true }
+readme = { workspace = true }
+homepage = { workspace = true }
+authors = { workspace = true }
+
+[features]
+default = []
+
+[dependencies]
+tcc_common.workspace = true
+
+tokio.workspace = true
+uuid.workspace = true
+serde.workspace = true
+tracing.workspace = true

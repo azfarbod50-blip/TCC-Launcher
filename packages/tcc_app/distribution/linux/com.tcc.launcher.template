@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=TCC Launcher
+GenericName=Minecraft Launcher
+Comment=Offline Minecraft Launcher - No Microsoft account required
+Exec=tcc-launcher
+Icon=com.tcc.launcher
+Terminal=false
+Categories=Game;
+StartupNotify=true
+StartupWMClass=TCC Launcher
+MimeType=x-scheme-handler/tcc;
+Keywords=minecraft;launcher;offline;game;

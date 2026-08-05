@@ -1,0 +1,28 @@
+[package]
+name = "tcc_auth"
+description = "TCC Launcher authentication and credentials store (offline only)"
+version = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+repository = { workspace = true }
+documentation = { workspace = true }
+readme = { workspace = true }
+homepage = { workspace = true }
+authors = { workspace = true }
+
+[features]
+default = []
+
+[dependencies]
+tcc_common.workspace = true
+tcc_db.workspace = true
+tcc_events.workspace = true
+tcc_net.workspace = true
+
+chrono.workspace = true
+md-5.workspace = true
+uuid.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+anyhow.workspace = true

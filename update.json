@@ -1,0 +1,28 @@
+{
+  "name": "TCC Launcher",
+  "version": "1.0.0",
+  "notes": "Initial release of TCC Launcher - offline Minecraft launcher",
+  "pub_date": "2026-01-15T00:00:00Z",
+  "platforms": {
+    "windows-x64": {
+      "signature": "",
+      "url": "https://github.com/azfarbod50-blip/TCC-Launcher/releases/download/v1.0.0/TCC-Launcher_1.0.0_x64_en-US.msi"
+    },
+    "darwin-x64": {
+      "signature": "",
+      "url": "https://github.com/azfarbod50-blip/TCC-Launcher/releases/download/v1.0.0/TCC-Launcher_1.0.0_x64.dmg"
+    },
+    "darwin-arm64": {
+      "signature": "",
+      "url": "https://github.com/azfarbod50-blip/TCC-Launcher/releases/download/v1.0.0/TCC-Launcher_1.0.0_arm64.dmg"
+    },
+    "linux-x64": {
+      "signature": "",
+      "url": "https://github.com/azfarbod50-blip/TCC-Launcher/releases/download/v1.0.0/TCC-Launcher_1.0.0_amd64.deb"
+    },
+    "linux-arm64": {
+      "signature": "",
+      "url": "https://github.com/azfarbod50-blip/TCC-Launcher/releases/download/v1.0.0/TCC-Launcher_1.0.0_arm64.deb"
+    }
+  }
+}
