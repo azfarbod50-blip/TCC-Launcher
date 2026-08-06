@@ -52,7 +52,7 @@ jobs:
 
       - name: Prepare SQLx query cache
         env:
-          DATABASE_URL: sqlite:test.db
+          DATABASE_URL: sqlite:${{ github.workspace }}/test.db
         run: |
           cargo install sqlx-cli --no-default-features --features sqlite,rustls
           cargo sqlx prepare --workspace
@@ -101,7 +101,7 @@ jobs:
 
       - name: Prepare SQLx query cache
         env:
-          DATABASE_URL: sqlite:test.db
+          DATABASE_URL: sqlite:${{ github.workspace }}/test.db
         run: |
           cargo install sqlx-cli --no-default-features --features sqlite,rustls
           cargo sqlx prepare --workspace
@@ -145,7 +145,7 @@ jobs:
 
       - name: Prepare SQLx query cache
         env:
-          DATABASE_URL: sqlite:test.db
+          DATABASE_URL: sqlite:${{ github.workspace }}/test.db
         run: |
           cargo install sqlx-cli --no-default-features --features sqlite,rustls
           cargo sqlx prepare --workspace
