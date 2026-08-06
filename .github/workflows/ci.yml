@@ -49,6 +49,9 @@ jobs:
             pkg-config \
             build-essential
 
+      - name: Fix formatting
+        run: cargo fmt --all
+
       - name: Check formatting
         run: cargo fmt --all -- --check
 
@@ -85,7 +88,10 @@ jobs:
 
       - name: Install system dependencies (macOS)
         run: |
-          brew install gtk+3 webkit2gtk librsvg pkg-config
+          brew install gtk+3 webkitgtk librsvg pkg-config
+
+      - name: Fix formatting
+        run: cargo fmt --all
 
       - name: Check formatting
         run: cargo fmt --all -- --check
@@ -120,6 +126,9 @@ jobs:
             ~/.cargo/git
             target
           key: windows-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Fix formatting
+        run: cargo fmt --all
 
       - name: Check formatting
         run: cargo fmt --all -- --check
