@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::path::PathBuf;
 use std::sync::Arc;
 
+use chrono::Utc;
 use directories::ProjectDirs;
 use sqlx::SqlitePool;
 use tokio::sync::Mutex;
