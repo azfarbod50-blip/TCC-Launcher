@@ -51,7 +51,9 @@ jobs:
             build-essential
 
       - name: Prepare SQLx query cache
-        run: cargo sqlx prepare --workspace
+        run: |
+          cargo install sqlx-cli --no-default-features --features sqlite,rustls
+          cargo sqlx prepare --workspace
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
@@ -96,7 +98,9 @@ jobs:
           brew install gtk+3 librsvg pkg-config || true
 
       - name: Prepare SQLx query cache
-        run: cargo sqlx prepare --workspace
+        run: |
+          cargo install sqlx-cli --no-default-features --features sqlite,rustls
+          cargo sqlx prepare --workspace
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
@@ -136,7 +140,9 @@ jobs:
           key: windows-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Prepare SQLx query cache
-        run: cargo sqlx prepare --workspace
+        run: |
+          cargo install sqlx-cli --no-default-features --features sqlite,rustls
+          cargo sqlx prepare --workspace
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
