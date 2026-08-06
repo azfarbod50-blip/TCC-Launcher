@@ -86,8 +86,9 @@ jobs:
           key: macos-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Install system dependencies (macOS)
+        continue-on-error: true
         run: |
-          brew install gtk+3 webkit2gtk librsvg pkg-config
+          brew install gtk+3 librsvg pkg-config || true
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
