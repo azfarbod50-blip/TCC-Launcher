@@ -35,6 +35,7 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             target
+            .sqlx
           key: ubuntu-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Install system dependencies (Linux)
@@ -48,6 +49,9 @@ jobs:
             libssl-dev \
             pkg-config \
             build-essential
+
+      - name: Prepare SQLx query cache
+        run: cargo sqlx prepare --workspace
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
@@ -83,12 +87,16 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             target
+            .sqlx
           key: macos-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Install system dependencies (macOS)
         continue-on-error: true
         run: |
           brew install gtk+3 librsvg pkg-config || true
+
+      - name: Prepare SQLx query cache
+        run: cargo sqlx prepare --workspace
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
@@ -124,7 +132,11 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             target
+            .sqlx
           key: windows-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Prepare SQLx query cache
+        run: cargo sqlx prepare --workspace
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
@@ -149,7 +161,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: tcc-launcher-installer
-          path: target/release/bundle/nsis/*.msi
+          path: target/release/bundle/nsis/*.exe
           retention-days: 7
 
   release:
@@ -173,5 +185,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            ./installer/*.msi
+            ./installer/*.exe
           generate_release_notes: true
