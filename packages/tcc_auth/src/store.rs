@@ -5,6 +5,7 @@ use std::sync::Arc;
 use directories::ProjectDirs;
 use sqlx::SqlitePool;
 use tokio::sync::Mutex;
+use uuid::Uuid;
 
 use crate::data::{AccountKind, MinecraftAccount};
 use crate::error::{AuthError, AuthResult};

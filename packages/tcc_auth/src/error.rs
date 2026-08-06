@@ -1,4 +1,3 @@
-use std::fmt;
 use thiserror::Error;
 
 /// Errors that can occur during authentication.

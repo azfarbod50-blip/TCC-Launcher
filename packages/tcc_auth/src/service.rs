@@ -8,7 +8,7 @@ use uuid::Uuid;
 
 use crate::data::{MinecraftAccount};
 use crate::error::{AuthError, AuthResult};
-use crate::offline::{offline_account, validate_offline_username};
+use crate::offline::{validate_offline_username};
 use crate::store::CredentialsStore;
 
 /// Owns everything the authentication flows need.
