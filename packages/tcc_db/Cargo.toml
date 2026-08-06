@@ -24,3 +24,5 @@ serde.workspace = true
 thiserror.workspace = true
 tracing.workspace = true
 anyhow.workspace = true
+directories.workspace = true
+tokio.workspace = true
