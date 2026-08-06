@@ -124,6 +124,7 @@ sysinfo = {version = "=0.39.5"}
 trash = {version = "=5.2.6"}
 url = {version = "=2.5.8", features = ["serde"]}
 uuid = {version = "=1.23.1", features = ["serde", "v4"]}
+zip = {version = "=0.6.6"}
 
 # util (codegen/macro)
 anyhow = {version = "=1.0.102"}
