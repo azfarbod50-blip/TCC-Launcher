@@ -13,7 +13,6 @@ concurrency:
 
 env:
   CARGO_TERM_COLOR: always
-  DATABASE_URL: sqlite:test.db
 
 jobs:
   build-linux:
@@ -52,6 +51,8 @@ jobs:
             build-essential
 
       - name: Prepare SQLx query cache
+        env:
+          DATABASE_URL: sqlite:test.db
         run: |
           cargo install sqlx-cli --no-default-features --features sqlite,rustls
           cargo sqlx prepare --workspace
@@ -99,6 +100,8 @@ jobs:
           brew install gtk+3 librsvg pkg-config || true
 
       - name: Prepare SQLx query cache
+        env:
+          DATABASE_URL: sqlite:test.db
         run: |
           cargo install sqlx-cli --no-default-features --features sqlite,rustls
           cargo sqlx prepare --workspace
@@ -141,6 +144,8 @@ jobs:
           key: windows-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Prepare SQLx query cache
+        env:
+          DATABASE_URL: sqlite:test.db
         run: |
           cargo install sqlx-cli --no-default-features --features sqlite,rustls
           cargo sqlx prepare --workspace
