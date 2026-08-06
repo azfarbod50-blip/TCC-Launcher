@@ -35,7 +35,6 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             target
-            .sqlx
           key: ubuntu-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Install system dependencies (Linux)
@@ -49,12 +48,6 @@ jobs:
             libssl-dev \
             pkg-config \
             build-essential
-
-      - name: Prepare SQLx query cache
-        run: |
-          cargo install sqlx-cli --no-default-features --features sqlite,rustls
-          touch test.db
-          DATABASE_URL="sqlite:test.db" cargo sqlx prepare --workspace
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
@@ -90,19 +83,12 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             target
-            .sqlx
           key: macos-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Install system dependencies (macOS)
         continue-on-error: true
         run: |
           brew install gtk+3 librsvg pkg-config || true
-
-      - name: Prepare SQLx query cache
-        run: |
-          cargo install sqlx-cli --no-default-features --features sqlite,rustls
-          touch test.db
-          DATABASE_URL="sqlite:test.db" cargo sqlx prepare --workspace
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
@@ -138,14 +124,7 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             target
-            .sqlx
           key: windows-cargo-${{ hashFiles('**/Cargo.lock') }}
-
-      - name: Prepare SQLx query cache
-        run: |
-          cargo install sqlx-cli --no-default-features --features sqlite,rustls
-          New-Item test.db -ItemType File -Force
-          $env:DATABASE_URL = "sqlite:test.db"; cargo sqlx prepare --workspace
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
