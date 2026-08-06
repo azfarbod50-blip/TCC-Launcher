@@ -1,5 +1,3 @@
 //! TCC Launcher content management.
 
-pub mod content;
-
-pub use content::*;
+// Module declarations removed - no content module exists yet
