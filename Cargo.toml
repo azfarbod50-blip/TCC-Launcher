@@ -8,12 +8,12 @@ resolver = "3"
 authors = [
   "TCC Launcher Contributors",
 ]
-documentation = "https://github.com/azfarbod50-blip/TCC-Launcher"
+documentation = "https://github.com/pnbx/TCC-Launcher"
 edition = "2024"
-homepage = "https://github.com/azfarbod50-blip/TCC-Launcher"
+homepage = "https://github.com/pnbx/TCC-Launcher"
 license = "GPL-3.0-only"
 readme = "README.md"
-repository = "https://github.com/azfarbod50-blip/TCC-Launcher"
+repository = "https://github.com/pnbx/TCC-Launcher"
 version = "1.0.0"
 
 [workspace.dependencies]

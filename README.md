@@ -83,9 +83,9 @@ TCC Launcher uses **offline authentication only**. No Microsoft/Xbox account is 
 
 ## Hosting
 All assets, updates, and releases are hosted on **GitHub**:
-- Repository: https://github.com/azfarbod50-blip/TCC-Launcher
-- Releases: https://github.com/azfarbod50-blip/TCC-Launcher/releases
-- API: https://api.github.com/repos/azfarbod50-blip/TCC-Launcher
+- Repository: https://github.com/pnbx/TCC-Launcher
+- Releases: https://github.com/pnbx/TCC-Launcher/releases
+- API: https://api.github.com/repos/pnbx/TCC-Launcher
 
 ## License
 GNU General Public License v3.0 - see [LICENSE](LICENSE) for details.
