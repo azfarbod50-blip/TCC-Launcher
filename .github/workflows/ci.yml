@@ -13,7 +13,7 @@ concurrency:
 
 env:
   CARGO_TERM_COLOR: always
-  DATABASE_URL: sqlite:///tmp/test.db
+  DATABASE_URL: sqlite:test.db
 
 jobs:
   build-linux:
