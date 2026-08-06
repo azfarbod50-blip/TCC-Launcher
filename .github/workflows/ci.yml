@@ -54,6 +54,10 @@ jobs:
         run: |
           brew install gtk+3 webkit2gtk librsvg pkg-config
 
+      - name: Install NSIS (Windows)
+        if: runner.os == 'Windows'
+        run: choco install nsis --no-progress
+
       - name: Check formatting
         run: cargo fmt --all -- --check
 
@@ -81,25 +85,25 @@ jobs:
           retention-days: 7
 
   release:
-      name: Create Release
-      needs: build
-      if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
-      runs-on: ubuntu-latest
-      permissions:
-        contents: write
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v4
+    name: Create Release
+    needs: build
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-        - name: Download NSIS installer
-          uses: actions/download-artifact@v4
-          with:
-            name: tcc-launcher-installer
-            path: ./installer
+      - name: Download NSIS installer
+        uses: actions/download-artifact@v4
+        with:
+          name: tcc-launcher-installer
+          path: ./installer
 
-        - name: Create Release
-          uses: softprops/action-gh-release@v1
-          with:
-            files: |
-              ./installer/*.msi
-            generate_release_notes: true
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ./installer/*.msi
+          generate_release_notes: true
