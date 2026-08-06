@@ -8,7 +8,7 @@ pub async fn copy_dir_all(src: &Path, dst: &Path) -> anyhow::Result<()> {
         let entry = entry?;
         let ty = entry.file_type()?;
         if ty.is_dir() {
-            copy_dir_all(&entry.path(), &dst.join(entry.file_name())).await?;
+            Box::pin(copy_dir_all(&entry.path(), &dst.join(entry.file_name()))).await?;
         } else {
             std::fs::copy(entry.path(), dst.join(entry.file_name()))?;
         }
