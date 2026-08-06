@@ -1,9 +1,6 @@
 //! TCC Launcher common utilities.
 
-pub mod error;
-
 use thiserror::Error;
-use uuid::Uuid;
 
 #[derive(Debug, Error)]
 pub enum CommonError {
