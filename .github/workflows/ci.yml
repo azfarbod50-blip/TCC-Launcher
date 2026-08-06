@@ -3,6 +3,7 @@ name: CI
 on:
   push:
     branches: [main]
+    tags: ['v*']
   pull_request:
     branches: [main]
 
@@ -65,28 +66,40 @@ jobs:
       - name: Run tests
         run: cargo test --workspace
 
-  release:
-    name: Create Release
-    needs: build
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Build release binaries
+      - name: Package installer (Windows)
+        if: runner.os == 'Windows'
         run: |
-          cargo build --workspace --release
-          # Package binaries for each platform would be done here
-          
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
+          cargo install cargo-packager --locked
+          cargo packager --release -p tcc_app --formats nsis
+
+      - name: Upload NSIS installer
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v4
         with:
-          files: |
-            target/release/tcc_app*
-          generate_release_notes: true
+          name: tcc-launcher-installer
+          path: target/release/bundle/nsis/*.msi
+          retention-days: 7
+
+  release:
+      name: Create Release
+      needs: build
+      if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+      runs-on: ubuntu-latest
+      permissions:
+        contents: write
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+
+        - name: Download NSIS installer
+          uses: actions/download-artifact@v4
+          with:
+            name: tcc-launcher-installer
+            path: ./installer
+
+        - name: Create Release
+          uses: softprops/action-gh-release@v1
+          with:
+            files: |
+              ./installer/*.msi
+            generate_release_notes: true
