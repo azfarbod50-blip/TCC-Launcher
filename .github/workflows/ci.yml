@@ -7,6 +7,10 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   CARGO_TERM_COLOR: always
 
@@ -18,6 +22,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         rust: [stable]
+    timeout-minutes: 60
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -53,10 +58,6 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install gtk+3 webkit2gtk librsvg pkg-config
-
-      - name: Install NSIS (Windows)
-        if: runner.os == 'Windows'
-        run: choco install nsis --no-progress
 
       - name: Check formatting
         run: cargo fmt --all -- --check
