@@ -53,7 +53,7 @@ jobs:
       - name: Prepare SQLx query cache
         run: |
           cargo install sqlx-cli --no-default-features --features sqlite,rustls
-          DATABASE_URL="sqlite:test.db" cargo sqlx prepare --workspace
+          cargo sqlx prepare --workspace --database-url sqlite:test.db
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
@@ -100,7 +100,7 @@ jobs:
       - name: Prepare SQLx query cache
         run: |
           cargo install sqlx-cli --no-default-features --features sqlite,rustls
-          DATABASE_URL="sqlite:test.db" cargo sqlx prepare --workspace
+          cargo sqlx prepare --workspace --database-url sqlite:test.db
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
@@ -142,7 +142,7 @@ jobs:
       - name: Prepare SQLx query cache
         run: |
           cargo install sqlx-cli --no-default-features --features sqlite,rustls
-          $env:DATABASE_URL = "sqlite:test.db"; cargo sqlx prepare --workspace
+          cargo sqlx prepare --workspace --database-url sqlite:test.db
 
       - name: Check formatting (non-blocking)
         continue-on-error: true
